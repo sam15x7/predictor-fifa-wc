@@ -28,7 +28,7 @@ const defaultSettings = {
   watchLiveUrl: "https://sam15x7.github.io/fifa/Cazetv(1).html",
   siteLogo: "https://i.ibb.co/k2dPbRyg/Picsart-26-06-28-20-19-42-827.png",
   siteFavicon: "https://i.ibb.co/k2dPbRyg/Picsart-26-06-28-20-19-42-827.png",
-  donationUpiUrl: "https://upi.pe/samihanchatterjee@fam/50.00?pn=Samihan+Chatterjee&tn=Wonderful+Website",
+  donationUpiUrl: "https://upi.pe/adminchatterjee@fam/50.00?pn=admin+Chatterjee&tn=Wonderful+Website",
   donationBtc: "bc1q5v9z3w0u4a...4z3z",
   donationEth: "0x7a3B2...9c4E",
   donationSol: "7x2a...F91a",
@@ -70,7 +70,7 @@ app.get('/api/settings', async (req, res) => {
 
 app.post('/api/settings', async (req, res) => {
   const { username, password, settings } = req.body;
-  if (username !== 'samihan' || password !== '456SamihanJujuKOLA') {
+  if (username !== 'admin' || password !== 'admin') {
     return res.status(401).json({ error: 'Unauthorized' });
   }
   await updateSettings(settings);
