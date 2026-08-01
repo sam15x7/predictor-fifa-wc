@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener('error', function(e) {
+        if (e.message && e.message.includes('Script error')) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          return true;
+        }
+      }, true);
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        if (msg === 'Script error.' || (typeof msg === 'string' && msg.includes('Script error'))) {
+          return true;
+        }
+        return false;
+      }
+      window.addEventListener('unhandledrejection', function(e) {
+        if (e.reason && e.reason.message && e.reason.message.includes('Script error')) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

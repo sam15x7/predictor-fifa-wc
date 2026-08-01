@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #d4af37;
+}
+
+@layer base {
+  :root {
+    --bg-color: #000000;
+    --card-bg: rgba(17, 17, 17, 0.6);
+    --text-color: #ffffff;
+    --muted-text: #a1a1aa;
+    --border-color: rgba(212, 175, 55, 0.2);
+    --accent-bg: rgba(212, 175, 55, 0.05);
+  }
+  
+  .dark {
+    --bg-color: #000000;
+    --card-bg: rgba(10, 10, 10, 0.6);
+    --text-color: #ffffff;
+    --muted-text: #a1a1aa;
+    --border-color: rgba(212, 175, 55, 0.3);
+    --accent-bg: rgba(212, 175, 55, 0.1);
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: radial-gradient(circle at top center, rgba(212, 175, 55, 0.15) 0%, rgba(0,0,0,1) 50%);
+  background-attachment: fixed;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.match-card {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.match-card:hover {
+  transform: translateY(-2px);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+.stage-btn-active {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.animate-ticker {
+  animation: ticker 25s linear infinite;
+  white-space: nowrap;
+}
+
+.rich-text-marquee p {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+

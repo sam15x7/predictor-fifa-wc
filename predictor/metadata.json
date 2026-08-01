@@ -1,0 +1,6 @@
+{
+  "name": "World Cup 2026 Dashboard",
+  "description": "Football dashboard for World Cup 2026 including live scores, upcoming matches, player search, and news.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
